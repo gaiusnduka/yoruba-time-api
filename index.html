@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoruba Time Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Yoruba Time Translator</h1>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-container">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
+            <p>Dark Mode</p>
+        </div>
+
+        <!-- English Digital Clock -->
+        <div class="clock-container">
+            <h4>Current English Time</h4>
+            <p class="arrow">↓</p>
+            <p id="digital-clock"></p>
+        </div>
+
+        <!-- Yoruba Time Translation -->
+        <div class="clock-container">
+            <h4>Current Yoruba Time</h4>
+            <p class="arrow">↓</p>
+            <p id="real-time-clock"></p>
+        </div>
+
+        <!-- Time Selection -->
+        <div class="time-selector">
+            <label for="hour">Hour:</label>
+            <select id="hour"></select>
+
+            <label for="minute">Minute:</label>
+            <select id="minute"></select>
+
+            <label for="period">AM/PM:</label>
+            <select id="period">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+
+        <button id="translate-btn">Translate</button>
+
+        <!-- Translation Output -->
+        <div id="output-box">
+            <p id="output"></p>
+        </div>
+
+        <!-- Translation History -->
+        <h3>Translation History</h3>
+        <ul id="history-list"></ul>
+
+        <!-- ✅ Clear History Button -->
+        <button id="clear-history-btn">Clear History</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
