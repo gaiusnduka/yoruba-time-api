@@ -94,12 +94,10 @@ def speak():
         return jsonify({"error": "Missing text input"}), 400
 
     try:
-        tts = gTTS(yoruba_text, lang="en")  # Using "en" because "yo" is not fully supported
-        audio_buffer = BytesIO()
-        tts.write_to_fp(audio_buffer)
-        audio_base64 = base64.b64encode(audio_buffer.getvalue()).decode("utf-8")
-
-        return jsonify({"audio": audio_base64})
+        tts = gTTS(yoruba_text, lang="yo")
+        audio_path = "yoruba_time.mp3"
+        tts.save(audio_path)
+        return send_file(audio_path, as_attachment=True)
     except Exception as e:
         return jsonify({"error": "Failed to generate audio", "details": str(e)}), 500
 
