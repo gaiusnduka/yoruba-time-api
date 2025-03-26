@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import datetime
 import os
-import base64
-from io import BytesIO
 from gtts import gTTS
 
 app = Flask(__name__)
@@ -97,7 +95,7 @@ def speak():
         tts = gTTS(yoruba_text, lang="en")
         audio_path = "yoruba_time.mp3"
         tts.save(audio_path)
-        return send_file(audio_path, as_attachment=True)
+        return send_file(audio_path, as_attachment=True, mimetype="audio/mpeg")
     except Exception as e:
         return jsonify({"error": "Failed to generate audio", "details": str(e)}), 500
 
